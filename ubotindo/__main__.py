@@ -41,7 +41,8 @@ from ubotindo import (
     URL,
     LOGGER,
     BLACKLIST_CHATS,
-    WHITELIST_CHATS,
+    WHITELIST_CHATS, 
+    client,
 )
 
 # needed to dynamically load modules
