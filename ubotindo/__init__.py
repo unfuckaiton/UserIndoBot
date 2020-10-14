@@ -196,9 +196,7 @@ else:
     spamwtc = spamwatch.Client(SPAMWATCH)
 
 # Telethon
-api_id = TELETHON_ID
-api_hash = TELETHON_HASH
-telethn = TelegramClient("ubotindo", api_id, api_hash)
+telethn = TelegramClient("ubotindo", TELETHON_ID, TELETHON_HASH)
 
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
 
