@@ -40,6 +40,9 @@ Corsicanu and Nunopenim for android modules
 
 Any other missing Credits can be seen in commits!
 
+<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/Saya-Siapa/UserIndoBot.git"> <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku" /></a></p>
+
+
 ## Starting the bot
 
 Once you've set up your database and your configuration (see below) is complete, simply run:
