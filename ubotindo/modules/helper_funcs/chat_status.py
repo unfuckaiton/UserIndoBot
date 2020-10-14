@@ -34,7 +34,7 @@ def is_user_ban_protected(
         or user_id in DEV_USERS
         or user_id in SUDO_USERS
         or user_id in WHITELIST_USERS
-        or chat.all_members_are_administrators or user_id in (777000, 1087968824):
+        or chat.all_members_are_administrators or user_id in (777000,1286081940, 1001188814263, 1087968824):
         return True
 
     if not member:
