@@ -35,8 +35,8 @@ class Config(object):
         ""  # If you dont know, run the bot and do /id in your private chat with it
     )
     OWNER_USERNAME = ""
-    TELETHON_HASH = None  # for purge stuffs
-    TELETHON_ID = None
+    TELETHON_HASH = ""  # for purge stuffs
+    TELETHON_ID = ""
 
     # RECOMMENDED
     # needed for any database modules
