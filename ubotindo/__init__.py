@@ -28,7 +28,7 @@ logging.basicConfig(
 
 LOGGER = logging.getLogger(__name__)
 
-LOGGER.info("Starting ubotindo...")
+LOGGER.info("Starting Kirana...")
 
 # if version < 3.6, stop bot.
 if sys.version_info[0] < 3 or sys.version_info[1] < 6:
