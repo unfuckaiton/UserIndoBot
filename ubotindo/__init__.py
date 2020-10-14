@@ -114,8 +114,8 @@ if ENV:
     CUSTOM_CMD = os.environ.get("CUSTOM_CMD", False)
     API_WEATHER = os.environ.get("API_OPENWEATHER", None)
     WALL_API = os.environ.get("WALL_API", None)
-    TELETHON_ID = os.environ.get("TL_APP_ID", None)
-    TELETHON_HASH = os.environ.get("TL_HASH", None)
+    TELETHON_ID = os.environ.get("TL_APP_ID", "")
+    TELETHON_HASH = os.environ.get("TL_HASH", "")
     SPAMWATCH = os.environ.get("SPAMWATCH_API", None)
     LASTFM_API_KEY = os.environ.get("LASTFM_API_KEY", None)
 
