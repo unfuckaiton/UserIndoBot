@@ -59,7 +59,7 @@ PM_START_TEXT = f"""
 Hey there! my name is *{dispatcher.bot.first_name}*.
 Any questions on how to use me? use /help
 
-Join Our [Group](https://t.me/userbotindo) If You wanna Report Issue 🙂
+Join Our [Group Me](https://t.me/xbotgroup) If You wanna Report Issue 🙂
 
 I'm here to make your group management fun and easy!
 I have lots of handy features ☺️ such as :
@@ -68,6 +68,7 @@ I have lots of handy features ☺️ such as :
 • Warning System.   • Predetermined Filters.
 
 *Managed With ❤️ By :* [UserbotIndo Team](https://t.me/userbotindo)
+*Maintained By me :* [°IᎷ▸ᷝᷟ͢ƒiηɇͥ ͫ། ツ](https://t.me/X_Newbie)
 
 Wanna Add me to your Group? Just click the button below!
 """
@@ -76,17 +77,17 @@ buttons = [
     [
         InlineKeyboardButton(
             text="Add to Group 👥",
-            url="t.me/userbotindobot?startgroup=true"),
+            url="t.me/marshaxbot?startgroup=true"),
         InlineKeyboardButton(
             text="Gban Logs 🚫",
-            url="https://t.me/UserIndoBotBannedLog"),
+            url="https://t.me/XBOTGBAN"),
     ]]
 
 
 buttons += [[InlineKeyboardButton(text="Help & Commands ❔",
                                   url=f"t.me/{dispatcher.bot.username}?start=help"),
              InlineKeyboardButton(text="Support Group 🎗️",
-                                  url="https://t.me/userbotindo"),
+                                  url="https://t.me/xbotgroup"),
              ]]
 
 
@@ -252,7 +253,7 @@ def start(update, context):
 
         else:
             update.effective_message.reply_photo(
-                "https://i.ibb.co/zJdLsyg/Userindobot.png",
+                "https://telegra.ph/file/dae6f289d645780a773cd.jpg",
                 PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
