@@ -130,7 +130,7 @@ def ping(update, context):
     start_time = time.time()
     message = msg.reply_text("Pinging...")
     end_time = time.time()
-    telegram_ping = round((end_time - start_time) * 1000, 3)) + " ms"
+    telegram_ping = round((end_time - start_time) * 1000, 3) + " ms"
     uptime = get_readable_time((time.time() - StartTime))
 
     message.edit_text(
