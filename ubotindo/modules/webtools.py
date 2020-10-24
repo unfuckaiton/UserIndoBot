@@ -29,6 +29,7 @@ from psutil import boot_time, cpu_percent, disk_usage, virtual_memory
 from spamwatch import __version__ as __sw__
 from telegram import ParseMode, __version__, Update
 from telegram.error import BadRequest
+from ubotindo.modules.disable import DisableAbleCommandHandler
 from telegram.ext import CommandHandler, Filters, run_async
 
 from ubotindo import StartTime, MESSAGE_DUMP, OWNER_ID, dispatcher
@@ -270,7 +271,7 @@ def restart(update, context):
 
 
 IP_HANDLER = CommandHandler("ip", get_bot_ip, filters=Filters.chat(OWNER_ID))
-PING_HANDLER = CommandHandler("ping", ping, filters=CustomFilters.sudo_filter)
+PING_HANDLER = DisableAbleCommandHandler("ping", ping)
 PINGALL_HANDLER = CommandHandler("pingall", pingall, filters=CustomFilters.sudo_filter)
 SPEED_HANDLER = CommandHandler("speedtest", speedtst, filters=CustomFilters.sudo_filter)
 SYS_STATUS_HANDLER = CommandHandler(
