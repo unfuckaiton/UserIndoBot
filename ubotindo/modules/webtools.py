@@ -30,7 +30,7 @@ from spamwatch import __version__ as __sw__
 from telegram import ParseMode, __version__, Update
 from telegram.error import BadRequest
 from ubotindo.modules.disable import DisableAbleCommandHandler
-from telegram.ext import CommandHandler, Filters, run_async
+from telegram.ext import CallbackContext, CommandHandler, Filters, run_async
 
 from ubotindo import StartTime, MESSAGE_DUMP, OWNER_ID, dispatcher
 from ubotindo.modules.helper_funcs.alternate import typing_action
@@ -126,12 +126,12 @@ def ping_func(to_ping: List[str]) -> List[str]:
 
 @typing_action
 @run_async
-def ping(update, context):
+def ping(update: Update, context: CallbackContext):
     msg = update.effective_message
     start_time = time.time()
     message = msg.reply_text("Pinging...")
     end_time = time.time()
-    telegram_ping = round((end_time - start_time) * 1000, 3)
+    telegram_ping = str(round((end_time - start_time) * 1000, 3)) + " ms"
     uptime = get_readable_time((time.time() - StartTime))
 
     message.edit_text(
@@ -142,7 +142,7 @@ def ping(update, context):
 
 @typing_action
 @run_async
-def pingall(update, context):
+def pingall(update: Update, context: CallbackContext):
     to_ping = ["Kaizoku", "Kayo", "Telegram", "XNXX"]
     pinged_list = ping_func(to_ping)
     pinged_list.insert(2, '')
@@ -272,7 +272,7 @@ def restart(update, context):
 
 IP_HANDLER = CommandHandler("ip", get_bot_ip, filters=Filters.chat(OWNER_ID))
 PING_HANDLER = DisableAbleCommandHandler("ping", ping)
-PINGALL_HANDLER = CommandHandler("pingall", pingall, filters=CustomFilters.sudo_filter)
+PINGALL_HANDLER = DisableAbleCommandHandler("pingall", pingall)
 SPEED_HANDLER = CommandHandler("speedtest", speedtst, filters=CustomFilters.sudo_filter)
 SYS_STATUS_HANDLER = CommandHandler(
     "sysinfo", system_status, filters=CustomFilters.dev_filter
