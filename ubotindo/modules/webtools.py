@@ -31,7 +31,7 @@ from telegram import ParseMode, __version__, Update
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler, Filters, run_async
 
-from ubotindo import MESSAGE_DUMP, OWNER_ID, dispatcher
+from ubotindo import StartTime, MESSAGE_DUMP, OWNER_ID, dispatcher
 from ubotindo.modules.helper_funcs.alternate import typing_action
 from ubotindo.modules.helper_funcs.filters import CustomFilters
 
