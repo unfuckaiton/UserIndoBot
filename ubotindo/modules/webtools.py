@@ -130,14 +130,14 @@ def ping(update, context):
     start_time = time.time()
     message = msg.reply_text("Pinging...")
     end_time = time.time()
-    telegram_ping = str(round((end_time - start_time) * 1000, 3)) + " ms"
+    telegram_ping = round((end_time - start_time) * 1000, 3)) + " ms"
     uptime = get_readable_time((time.time() - StartTime))
 
     message.edit_text(
         "PONG!!🏓\n"
         "<b>Time Taken:</b> <code>{}</code>\n"
         "<b>Service uptime:</b> <code>{}</code>".format(telegram_ping, uptime),
-        parse_mode=ParseMode.MARKDOWN)
+        parse_mode=ParseMode.HTML)
 
 @typing_action
 @run_async
