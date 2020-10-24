@@ -69,7 +69,7 @@ sites_list = {
     "Telegram": "https://api.telegram.org",
     "Kaizoku": "https://animekaizoku.com",
     "Kayo": "https://animekayo.com",
-    "Jikan": "https://api.jikan.moe/v3"
+    "XNXX": "https://xnxx.com"
 }
 
 
@@ -127,7 +127,6 @@ def ping_func(to_ping: List[str]) -> List[str]:
 @run_async
 def ping(update, context):
     msg = update.effective_message
-
     start_time = time.time()
     message = msg.reply_text("Pinging...")
     end_time = time.time()
@@ -138,12 +137,12 @@ def ping(update, context):
         "PONG!!🏓\n"
         "<b>Time Taken:</b> <code>{}</code>\n"
         "<b>Service uptime:</b> <code>{}</code>".format(telegram_ping, uptime),
-        parse_mode=ParseMode.HTML)
+        parse_mode=ParseMode.MARKDOWN)
 
 @typing_action
 @run_async
 def pingall(update, context):
-    to_ping = ["Kaizoku", "Kayo", "Telegram", "Jikan"]
+    to_ping = ["Kaizoku", "Kayo", "Telegram", "XNXX"]
     pinged_list = ping_func(to_ping)
     pinged_list.insert(2, '')
     uptime = get_readable_time((time.time() - StartTime))
