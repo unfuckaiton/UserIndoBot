@@ -29,7 +29,7 @@ from psutil import boot_time, cpu_percent, disk_usage, virtual_memory
 from spamwatch import __version__ as __sw__
 from telegram import ParseMode, __version__, Update
 from telegram.error import BadRequest
-from telegram.ext import CallbackContext, CommandHandler, Filters, run_async
+from telegram.ext import CommandHandler, Filters, run_async
 
 from ubotindo import StartTime, MESSAGE_DUMP, OWNER_ID, dispatcher
 from ubotindo.modules.helper_funcs.alternate import typing_action
@@ -125,7 +125,7 @@ def ping_func(to_ping: List[str]) -> List[str]:
 
 @typing_action
 @run_async
-def ping(update: Update, context):
+def ping(update, context):
     msg = update.effective_message
 
     start_time = time.time()
@@ -142,7 +142,7 @@ def ping(update: Update, context):
 
 @typing_action
 @run_async
-def pingall(update: Update, context):
+def pingall(update, context):
     to_ping = ["Kaizoku", "Kayo", "Telegram", "Jikan"]
     pinged_list = ping_func(to_ping)
     pinged_list.insert(2, '')
