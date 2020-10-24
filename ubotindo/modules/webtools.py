@@ -21,14 +21,15 @@ import platform
 import subprocess
 import time
 from platform import python_version
+from typing import List
 
 import requests
 import speedtest
 from psutil import boot_time, cpu_percent, disk_usage, virtual_memory
 from spamwatch import __version__ as __sw__
-from telegram import ParseMode, __version__
+from telegram import ParseMode, __version__, Update
 from telegram.error import BadRequest
-from telegram.ext import CommandHandler, Filters, run_async
+from telegram.ext import CallbackContext, CommandHandler, Filters, run_async
 
 from ubotindo import MESSAGE_DUMP, OWNER_ID, dispatcher
 from ubotindo.modules.helper_funcs.alternate import typing_action
@@ -64,17 +65,96 @@ def leavechat(update, context):
             return
 
 
+sites_list = {
+    "Telegram": "https://api.telegram.org",
+    "Kaizoku": "https://animekaizoku.com",
+    "Kayo": "https://animekayo.com",
+    "Jikan": "https://api.jikan.moe/v3"
+}
+
+
+def get_readable_time(seconds: int) -> str:
+    count = 0
+    ping_time = ""
+    time_list = []
+    time_suffix_list = ["s", "m", "h", "days"]
+
+    while count < 4:
+        count += 1
+        if count < 3:
+            remainder, result = divmod(seconds, 60)
+        else:
+            remainder, result = divmod(seconds, 24)
+        if seconds == 0 and remainder == 0:
+            break
+        time_list.append(int(result))
+        seconds = int(remainder)
+
+    for x in range(len(time_list)):
+        time_list[x] = str(time_list[x]) + time_suffix_list[x]
+    if len(time_list) == 4:
+        ping_time += time_list.pop() + ", "
+
+    time_list.reverse()
+    ping_time += ":".join(time_list)
+
+    return ping_time
+
+
+def ping_func(to_ping: List[str]) -> List[str]:
+    ping_result = []
+
+    for each_ping in to_ping:
+
+        start_time = time.time()
+        site_to_ping = sites_list[each_ping]
+        r = requests.get(site_to_ping)
+        end_time = time.time()
+        ping_time = str(round((end_time - start_time), 2)) + "s"
+
+        pinged_site = f"<b>{each_ping}</b>"
+
+        if each_ping == "Kaizoku" or each_ping == "Kayo":
+            pinged_site = f'<a href="{sites_list[each_ping]}">{each_ping}</a>'
+            ping_time = f"<code>{ping_time} (Status: {r.status_code})</code>"
+
+        ping_text = f"{pinged_site}: <code>{ping_time}</code>"
+        ping_result.append(ping_text)
+
+    return ping_result
+
 @typing_action
 @run_async
-def ping(update, context):
+def ping(update: Update, context: CallbackContext):
     msg = update.effective_message
+
     start_time = time.time()
     message = msg.reply_text("Pinging...")
     end_time = time.time()
-    ping_time = round((end_time - start_time) * 1000, 3)
+    telegram_ping = str(round((end_time - start_time) * 1000, 3)) + " ms"
+    uptime = get_readable_time((time.time() - StartTime))
+
     message.edit_text(
-        "*Pong!!!*\n`{}ms`".format(ping_time), parse_mode=ParseMode.MARKDOWN
-    )
+        "PONG!!🏓\n"
+        "<b>Time Taken:</b> <code>{}</code>\n"
+        "<b>Service uptime:</b> <code>{}</code>".format(telegram_ping, uptime),
+        parse_mode=ParseMode.HTML)
+
+@typing_action
+@run_async
+def pingall(update: Update, context: CallbackContext):
+    to_ping = ["Kaizoku", "Kayo", "Telegram", "Jikan"]
+    pinged_list = ping_func(to_ping)
+    pinged_list.insert(2, '')
+    uptime = get_readable_time((time.time() - StartTime))
+
+    reply_msg = "⏱Ping results are:\n"
+    reply_msg += "\n".join(pinged_list)
+    reply_msg += '\n<b>Service uptime:</b> <code>{}</code>'.format(uptime)
+
+    update.effective_message.reply_text(
+        reply_msg, parse_mode=ParseMode.HTML, disable_web_page_preview=True)
+
 
 
 @run_async
@@ -192,6 +272,7 @@ def restart(update, context):
 
 IP_HANDLER = CommandHandler("ip", get_bot_ip, filters=Filters.chat(OWNER_ID))
 PING_HANDLER = CommandHandler("ping", ping, filters=CustomFilters.sudo_filter)
+PINGALL_HANDLER = CommandHandler("pingall", pingall, filters=CustomFilters.sudo_filter)
 SPEED_HANDLER = CommandHandler("speedtest", speedtst, filters=CustomFilters.sudo_filter)
 SYS_STATUS_HANDLER = CommandHandler(
     "sysinfo", system_status, filters=CustomFilters.dev_filter
@@ -208,6 +289,7 @@ RESTART_HANDLER = CommandHandler("reboot", restart, filters=CustomFilters.dev_fi
 dispatcher.add_handler(IP_HANDLER)
 dispatcher.add_handler(SPEED_HANDLER)
 dispatcher.add_handler(PING_HANDLER)
+dispatcher.add_handler(PINGALL_HANDLER)
 dispatcher.add_handler(SYS_STATUS_HANDLER)
 dispatcher.add_handler(LEAVECHAT_HANDLER)
 dispatcher.add_handler(GITPULL_HANDLER)
