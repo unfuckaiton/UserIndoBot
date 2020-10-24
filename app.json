@@ -13,11 +13,11 @@
          "description": "Set this to True if you want ! to be a command prefix along with /",
          "value": "True"
       },
-      "TELETHON_ID": {
+      "TL_APP_ID": {
          "description": "ID of the sticker you want to use when banning people.",
          "value": ""
       },
-      "TELETHON_HASH": {
+      "TL_HASH": {
          "description": "ID of the sticker you want to use when banning people.",
          "value": ""
       },
