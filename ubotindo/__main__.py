@@ -19,6 +19,7 @@ import traceback
 import html
 import json
 import re
+import time
 from typing import Optional
 
 from telegram import Message, Chat, User
@@ -53,6 +54,33 @@ from ubotindo.modules.helper_funcs.chat_status import is_user_admin
 from ubotindo.modules.helper_funcs.filters import CustomFilters
 from ubotindo.modules.helper_funcs.misc import paginate_modules
 from ubotindo.modules.helper_funcs.alternate import typing_action
+
+def get_readable_time(seconds: int) -> str:
+    count = 0
+    ping_time = ""
+    time_list = []
+    time_suffix_list = ["s", "m", "h", "days"]
+
+    while count < 4:
+        count += 1
+        if count < 3:
+            remainder, result = divmod(seconds, 60)
+        else:
+            remainder, result = divmod(seconds, 24)
+        if seconds == 0 and remainder == 0:
+            break
+        time_list.append(int(result))
+        seconds = int(remainder)
+
+    for x in range(len(time_list)):
+        time_list[x] = str(time_list[x]) + time_suffix_list[x]
+    if len(time_list) == 4:
+        ping_time += time_list.pop() + ", "
+
+    time_list.reverse()
+    ping_time += ":".join(time_list)
+
+    return ping_time
 
 
 PM_START_TEXT = f"""
