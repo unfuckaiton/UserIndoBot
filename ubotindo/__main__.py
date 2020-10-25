@@ -93,7 +93,8 @@ I have lots of handy features ☺️ such as :
 • flood control.         • Note'S keeping system.
 • Warning System.   • Predetermined Filters.
 ━━━━━━━━━━━━━━━━━━━━━━━
-*Maintained By me :* [°IᎷ▸ᷝᷟ͢ƒiηɇͥ ͫ། ツ](https://t.me/X_Newbie)
+*Saya Di Jalankan oleh :* [°IᎷ▸ᷝᷟ͢ƒiηɇͥ ͫ། ツ](https://t.me/X_Newbie)
+*Jangan Lupa juga Tes Bot:* [XBOT OFFICIAL](https://t.me/XBOTGBOT)
 
 Wanna Add me to your Group? Just click the button below!
 """
