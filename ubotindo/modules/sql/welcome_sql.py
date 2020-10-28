@@ -21,7 +21,7 @@ from sqlalchemy import Column, String, Boolean, UnicodeText, Integer, BigInteger
 from ubotindo.modules.helper_funcs.msg_types import Types
 from ubotindo.modules.sql import SESSION, BASE
 
-DEFAULT_WELCOME = "Hi {first}, how are you?"
+DEFAULT_WELCOME = "Hi {first}, Selamat datang di Group Saya 😊"
 DEFAULT_GOODBYE = "{first} has left the game."
 
 
