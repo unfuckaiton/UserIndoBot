@@ -93,7 +93,7 @@ I have lots of handy features ☺️ such as :
 • flood control.         • Note'S keeping system.
 • Warning System.   • Predetermined Filters.
 ━━━━━━━━━━━━━━━━━━━━━━━
-*Saya Di Jalankan oleh :* [°IᎷ▸ᷝᷟ͢ƒiηɇͥ ͫ། ツ](https://t.me/X_Newbie)
+*Saya Di Jalankan oleh :* [°IᎷ▸ᷝᷟ͢ƒiηɇͥ ͫ། ツ](https://t.me/X_Newbie_Bot)
 *Jangan Lupa juga Tes Bot:* [XBOT OFFICIAL](https://t.me/xbotgroup_bot)
 
 Wanna Add me to your Group? Just click the button below!
@@ -113,7 +113,7 @@ buttons = [
 buttons += [[InlineKeyboardButton(text="Help & Commands ❔",
                                   url=f"t.me/{dispatcher.bot.username}?start=help"),
              InlineKeyboardButton(text="Support Group 🎗️",
-                                  url="https://t.me/xbotgroup"),
+                                  url="https://t.me/"),
              ]]
 
 
