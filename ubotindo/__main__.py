@@ -94,7 +94,7 @@ I have lots of handy features ☺️ such as :
 • Warning System.   • Predetermined Filters.
 ━━━━━━━━━━━━━━━━━━━━━━━
 *Saya Di Jalankan oleh :* [°IᎷ▸ᷝᷟ͢ƒiηɇͥ ͫ། ツ](https://t.me/X_Newbie)
-*Jangan Lupa juga Tes Bot:* [XBOT OFFICIAL](https://t.me/XBOTGBOT)
+*Jangan Lupa juga Tes Bot:* [XBOT OFFICIAL](https://t.me/xbotgroup_bot)
 
 Wanna Add me to your Group? Just click the button below!
 """
@@ -106,7 +106,7 @@ buttons = [
             url="t.me/marshaxbot?startgroup=true"),
         InlineKeyboardButton(
             text="Gban Logs 🚫",
-            url="https://t.me/XBOTGBAN"),
+            url="https://t.me/xgbanlogs"),
     ]]
 
 
