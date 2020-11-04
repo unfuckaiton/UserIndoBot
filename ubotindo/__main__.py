@@ -85,13 +85,13 @@ def get_readable_time(seconds: int) -> str:
 
 PM_START_TEXT = f"""
 Hey there! my name is *{dispatcher.bot.first_name}*.
-Any questions on how to use me? use /help
+Ada pertanyaan tentang cara menggunakan saya? gunakan /help
 ━━━━━━━━━━━━━━━━━━━━━━━
-I'm here to make your group management fun and easy!
-I have lots of handy features ☺️ such as :
+Saya di sini untuk membuat pengelolaan grup Anda menyenangkan dan mudah!
+Saya memiliki banyak fitur praktis ☺️ seperti:
 
-• flood control.         • Note'S keeping system.
-• Warning System.   • Predetermined Filters.
+• Anti Spam.         • Sistem penyimpanan catatan.
+• Sistem Peringatan.   • Predetermined Filters.
 ━━━━━━━━━━━━━━━━━━━━━━━
 *Saya Di Jalankan oleh :* [MR.ERROR](https://t.me/XNewbie)
 *Jangan Lupa juga Tes Bot:* [XBOT OFFICIAL](https://t.me/xbotgroup_bot)
@@ -279,7 +279,7 @@ def start(update, context):
 
         else:
             update.effective_message.reply_photo(
-                "https://telegra.ph/file/dae6f289d645780a773cd.jpg",
+                "https://telegra.ph/file/22bbad160a1d8936e067c.jpg",
                 PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
