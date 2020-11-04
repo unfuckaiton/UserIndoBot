@@ -84,19 +84,16 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = f"""
-Hey there! my name is *{dispatcher.bot.first_name}*.
-Ada pertanyaan tentang cara menggunakan saya? gunakan /help
-━━━━━━━━━━━━━━━━━━━━━━━
-Saya di sini untuk membuat pengelolaan grup Anda menyenangkan dan mudah!
-Saya memiliki banyak fitur praktis ☺️ seperti:
+Hey! Senang kita bisa bertemu.
+Perkenalkan saya adalah *{dispatcher.bot.first_name}*.
+Saya di sini bertugas untuk menjadi pengelola *Group* kamu agar lebih aman dan menyenangkan :)
 
-• Anti Spam.         • Sistem penyimpanan catatan.
-• Sistem Peringatan.   • Predetermined Filters.
-━━━━━━━━━━━━━━━━━━━━━━━
-*Saya Di Jalankan oleh :* [MR.ERROR](https://t.me/XNewbie)
+Ada pertanyaan tentang cara menggunakan saya? gunakan /help
+
+*I am managed by :* [MR.ERROR](https://t.me/XNewbie)
 *Jangan Lupa juga Tes Bot:* [XBOT OFFICIAL](https://t.me/xbotgroup_bot)
 
-Wanna Add me to your Group? Just click the button below!
+Ingin menambahkan saya ke grup Anda? Cukup klik tombol di bawah!
 """
 
 buttons = [
@@ -105,23 +102,22 @@ buttons = [
             text="Add to Group 👥",
             url="t.me/marshaxbot?startgroup=true"),
         InlineKeyboardButton(
-            text="Gban Logs 🚫",
-            url="https://t.me/xgbanlogs"),
+            text="Anonymous",
+            url="https://t.me/Anonymous_Groups"),
     ]]
 
 
 buttons += [[InlineKeyboardButton(text="Help & Commands ❔",
                                   url=f"t.me/{dispatcher.bot.username}?start=help"),
-             InlineKeyboardButton(text="Support Group 🎗️",
-                                  url="https://t.me/"),
+             InlineKeyboardButton(text="Support Channel 🎗️",
+                                  url="https://t.me/Anonymous_Channels"),
              ]]
 
 
 HELP_STRINGS = f"""
-Hello there! My name is *{dispatcher.bot.first_name}*.
-I'm a modular group management bot with a few fun extras! Have a look at the following for an idea of some of \
-the things I can help you with.
-
+Halo! Nama saya adalah *{dispatcher.bot.first_name}*.
+Saya bot manajemen grup modular dengan beberapa tambahan yang menyenangkan! Lihatlah berikut ini untuk mendapatkan gambaran tentang beberapa \
+hal-hal yang dapat saya bantu.
 *Main* commands available:
  × /start: Starts me, can be used to check i'm alive or no...
  × /help: PM's you this message.
@@ -279,7 +275,7 @@ def start(update, context):
 
         else:
             update.effective_message.reply_photo(
-                "https://telegra.ph/file/22bbad160a1d8936e067c.jpg",
+                "https://telegra.ph/file/3a99a4b334a819c938ed1.jpg",
                 PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
