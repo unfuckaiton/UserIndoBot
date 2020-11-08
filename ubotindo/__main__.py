@@ -91,7 +91,6 @@ Saya di sini bertugas untuk menjadi pengelola *Group* kamu agar lebih aman dan m
 Ada pertanyaan tentang cara menggunakan saya? gunakan /help
 
 *I am managed by :* [➳͜͡❂ঔৣ⃕͜x͠N͜͡ᎬᎳᏴᏆᎬ࿐](https://t.me/XNewbie)
-*Jangan Lupa juga Tes Bot:* [XBOT OFFICIAL](https://t.me/xbotgroup_bot)
 
 Ingin menambahkan saya ke grup Anda? Cukup klik tombol di bawah!
 """
@@ -119,10 +118,10 @@ Halo! Nama saya adalah *{dispatcher.bot.first_name}*.
 Saya bot manajemen grup modular dengan beberapa tambahan yang menyenangkan! Lihatlah berikut ini untuk mendapatkan gambaran tentang beberapa \
 hal-hal yang dapat saya bantu.
 *Main* commands available:
- :fire: /start: Mulai saya, dapat digunakan untuk memeriksa saya masih hidup atau tidak ...
- :fire: /help: PM adalah Anda pesan ini.
- :fire: /help <module name>: PM Anda info tentang modul itu.
- :fire: /settings: akan mengirimkan pengaturan Anda untuk semua modul yang didukung.
++ /start: Mulai saya, dapat digunakan untuk memeriksa saya masih hidup atau tidak ...
++ /help: PM adalah Anda pesan ini.
++ /help <module name>: PM Anda info tentang modul itu.
++ /settings: akan mengirimkan pengaturan Anda untuk semua modul yang didukung.
    - Dalam grup: akan mengarahkan Anda ke pm, dengan semua pengaturan obrolan itu.
  \ nKlik tombol di bawah ini untuk mendapatkan dokumentasi tentang modul tertentu!"""
 
@@ -131,31 +130,31 @@ STAFF_HELP_STRINGS = """Hey there staff users. Nice to see you :)
 Ini semua perintah staf. Pengguna di atas memiliki akses perintah untuk semua perintah di bawah ini
 
 *OWNER*
-:fire: /broadcast: Kirim pesan siaran ke semua obrolan yang saya ikuti saat ini.
-:fire: /staffids: Dapatkan semua staf yang Anda miliki
-× /ip: Mengirimkan alamat IP bot ke ssh in jika perlu (khusus PM).
++ /broadcast: Kirim pesan siaran ke semua obrolan yang saya ikuti saat ini.
++ /staffids: Dapatkan semua staf yang Anda miliki
++ Mengirimkan alamat IP bot ke ssh in jika perlu (khusus PM).
 
 *DEV USERS*
-:fire: /gitpull: Tarik pembaruan terbaru.
-:fire: /reboot: Mulai ulang bot.
-:fire: /dbcleanup: Bersihkan database saya yang tidak valid.
-:fire: /leavemutedchats: Tinggalkan semua obrolan di mana saya tidak bisa mengirim pesan.
-:fire: /leave <chatid>: Katakan padaku untuk meninggalkan grup tertentu. (alias / leavechat / leavegroup).
-:fire: /stats: Daftar semua blacklist, filter, federation, gbans, dll dari semua grup.
-:fire: /getlink <chatid>: Dapatkan tautan undangan obrolan.
-:fire: /sysinfo: Dapatkan info sistem saya.
++ /gitpull: Tarik pembaruan terbaru.
++ /reboot: Mulai ulang bot.
++ /dbcleanup: Bersihkan database saya yang tidak valid.
++ /leavemutedchats: Tinggalkan semua obrolan di mana saya tidak bisa mengirim pesan.
++ /leave <chatid>: Katakan padaku untuk meninggalkan grup tertentu. (alias / leavechat / leavegroup).
++ /stats: Daftar semua blacklist, filter, federation, gbans, dll dari semua grup.
++ /getlink <chatid>: Dapatkan tautan undangan obrolan.
++ /sysinfo: Dapatkan info sistem saya.
 
 *SUDO USERS*
-:fire: /snipe <chatid> <string>: Beri tahu saya untuk mengirim pesan ke obrolan yang diberikan.
-:fire: /echo <string>: Seperti snipe tetapi pada obrolan saat ini.
-:fire: /chatlist: Dapatkan daftar obrolan yang saat ini saya ikuti.
-:fire: /ping: Mulailah tes ping.
-:fire: /speedtest: Mulai uji kecepatan dari server saya.
++ /snipe <chatid> <string>: Beri tahu saya untuk mengirim pesan ke obrolan yang diberikan.
++ /echo <string>: Seperti snipe tetapi pada obrolan saat ini.
++ /chatlist: Dapatkan daftar obrolan yang saat ini saya ikuti.
++ /ping: Mulailah tes ping.
++ /speedtest: Mulai uji kecepatan dari server saya.
 
 *SUPPORT USERS*
-:fire: /gban <userid>: larangan global pengguna.
-:fire: /ungban <userid>: hapus pengguna yang saat ini dilarang.
-:fire: /gbanlist: Dapatkan daftar pengguna yang diblokir saat ini."""
++ /gban <userid>: larangan global pengguna.
++ /ungban <userid>: hapus pengguna yang saat ini dilarang.
++ /gbanlist: Dapatkan daftar pengguna yang diblokir saat ini."""
 
 
 IMPORTED = {}
@@ -275,7 +274,7 @@ def start(update, context):
 
         else:
             update.effective_message.reply_photo(
-                "https://telegra.ph/file/4f579f721cd77ec93e859.jpg",
+                "https://telegra.ph/file/2b47585bcf73d39dc75b2.jpg",
                 PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
