@@ -90,7 +90,7 @@ Saya di sini bertugas untuk menjadi pengelola *Group* kamu agar lebih aman dan m
 
 Ada pertanyaan tentang cara menggunakan saya? gunakan /help
 
-*I am managed by :* [MR.ERROR](https://t.me/XNewbie)
+*I am managed by :* [➳͜͡❂ঔৣ⃕͜x͠N͜͡ᎬᎳᏴᏆᎬ࿐](https://t.me/XNewbie)
 *Jangan Lupa juga Tes Bot:* [XBOT OFFICIAL](https://t.me/xbotgroup_bot)
 
 Ingin menambahkan saya ke grup Anda? Cukup klik tombol di bawah!
@@ -100,10 +100,10 @@ buttons = [
     [
         InlineKeyboardButton(
             text="Add to Group 👥",
-            url="t.me/marshaxbot?startgroup=true"),
+            url="t.me/XNewbieBot?startgroup=true"),
         InlineKeyboardButton(
-            text="Anonymous",
-            url="https://t.me/Anonymous_Groups"),
+            text="XBOT",
+            url="https://t.me/xbotgroup"),
     ]]
 
 
@@ -119,43 +119,43 @@ Halo! Nama saya adalah *{dispatcher.bot.first_name}*.
 Saya bot manajemen grup modular dengan beberapa tambahan yang menyenangkan! Lihatlah berikut ini untuk mendapatkan gambaran tentang beberapa \
 hal-hal yang dapat saya bantu.
 *Main* commands available:
- × /start: Starts me, can be used to check i'm alive or no...
- × /help: PM's you this message.
- × /help <module name>: PM's you info about that module.
- × /settings: in PM: will send you your settings for all supported modules.
-   - in a group: will redirect you to pm, with all that chat's settings.
- \nClick on the buttons below to get documentation about specific modules!"""
+ :fire: /start: Mulai saya, dapat digunakan untuk memeriksa saya masih hidup atau tidak ...
+ :fire: /help: PM adalah Anda pesan ini.
+ :fire: /help <module name>: PM Anda info tentang modul itu.
+ :fire: /settings: akan mengirimkan pengaturan Anda untuk semua modul yang didukung.
+   - Dalam grup: akan mengarahkan Anda ke pm, dengan semua pengaturan obrolan itu.
+ \ nKlik tombol di bawah ini untuk mendapatkan dokumentasi tentang modul tertentu!"""
 
 
 STAFF_HELP_STRINGS = """Hey there staff users. Nice to see you :)
-Here is all the staff's commands. Users above has the command access for all commands below.
+Ini semua perintah staf. Pengguna di atas memiliki akses perintah untuk semua perintah di bawah ini
 
 *OWNER*
-× /broadcast: Send a broadcast message to all chat that i'm currently in.
-× /staffids: Get all staff's you have.
-× /ip: Sends the bot's IP address to ssh in if necessary (PM only).
+:fire: /broadcast: Kirim pesan siaran ke semua obrolan yang saya ikuti saat ini.
+:fire: /staffids: Dapatkan semua staf yang Anda miliki
+× /ip: Mengirimkan alamat IP bot ke ssh in jika perlu (khusus PM).
 
 *DEV USERS*
-× /gitpull: Pull latest update.
-× /reboot: Restart the bot.
-× /dbcleanup: Clean my invalid database.
-× /leavemutedchats: Leave all chats where i can't send message.
-× /leave <chatid>: Tell me to leave the given group. (alias /leavechat /leavegroup).
-× /stats: List of all blacklists, filters, federations, gbans, etc from all group.
-× /getlink <chatid>: Get chat invite link.
-× /sysinfo: Get my system info.
+:fire: /gitpull: Tarik pembaruan terbaru.
+:fire: /reboot: Mulai ulang bot.
+:fire: /dbcleanup: Bersihkan database saya yang tidak valid.
+:fire: /leavemutedchats: Tinggalkan semua obrolan di mana saya tidak bisa mengirim pesan.
+:fire: /leave <chatid>: Katakan padaku untuk meninggalkan grup tertentu. (alias / leavechat / leavegroup).
+:fire: /stats: Daftar semua blacklist, filter, federation, gbans, dll dari semua grup.
+:fire: /getlink <chatid>: Dapatkan tautan undangan obrolan.
+:fire: /sysinfo: Dapatkan info sistem saya.
 
 *SUDO USERS*
-× /snipe <chatid> <string>: Tell me to send a message to the given chat.
-× /echo <string>: Like snipe but on the current chat.
-× /chatlist: Get the list of chat that i'm currently in.
-× /ping: Start a ping test.
-× /speedtest: Start a speedtest from my server.
+:fire: /snipe <chatid> <string>: Beri tahu saya untuk mengirim pesan ke obrolan yang diberikan.
+:fire: /echo <string>: Seperti snipe tetapi pada obrolan saat ini.
+:fire: /chatlist: Dapatkan daftar obrolan yang saat ini saya ikuti.
+:fire: /ping: Mulailah tes ping.
+:fire: /speedtest: Mulai uji kecepatan dari server saya.
 
 *SUPPORT USERS*
-× /gban <userid>: global ban a user.
-× /ungban <userid>: remove currently gbanned user.
-× /gbanlist: Get the list of currently gbanned users."""
+:fire: /gban <userid>: larangan global pengguna.
+:fire: /ungban <userid>: hapus pengguna yang saat ini dilarang.
+:fire: /gbanlist: Dapatkan daftar pengguna yang diblokir saat ini."""
 
 
 IMPORTED = {}
@@ -275,7 +275,7 @@ def start(update, context):
 
         else:
             update.effective_message.reply_photo(
-                "https://telegra.ph/file/3a99a4b334a819c938ed1.jpg",
+                "https://telegra.ph/file/4f579f721cd77ec93e859.jpg",
                 PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
