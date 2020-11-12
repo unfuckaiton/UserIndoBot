@@ -84,32 +84,25 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = f"""
-Hey! Senang kita bisa bertemu.
-Perkenalkan saya adalah *{dispatcher.bot.first_name}*.
-Saya di sini bertugas untuk menjadi pengelola *Group* kamu agar lebih aman dan menyenangkan :)
+Partner found [Anonymous](https://t.me/XNewbie)
+/next — find a new partner
+/stop — stop this dialog
 
-Ada pertanyaan tentang cara menggunakan saya? gunakan /help
-
-*I am managed by :* [➳͜͡❂ঔৣ⃕͜x͠N͜͡ᎬᎳᏴᏆᎬ࿐](https://t.me/XNewbie)
-
-Ingin menambahkan saya ke grup Anda? Cukup klik tombol di bawah!
+Send me text, links, gifs, stickers, photos, videos or voice messages and I will anonymously forward them to your partner
 """
 
 buttons = [
     [
         InlineKeyboardButton(
-            text="Add to Group 👥",
-            url="t.me/XNewbieBot?startgroup=true"),
-        InlineKeyboardButton(
-            text="XBOT",
-            url="https://t.me/xbotgroup"),
+            text="Add me to your group",
+            url="t.me/ufckbot?startgroup=true"),
     ]]
 
 
 buttons += [[InlineKeyboardButton(text="Help & Commands ❔",
                                   url=f"t.me/{dispatcher.bot.username}?start=help"),
              InlineKeyboardButton(text="Support Channel 🎗️",
-                                  url="https://t.me/Anonymous_Channels"),
+                                  url="https://t.me/The_Channels"),
              ]]
 
 
@@ -274,7 +267,7 @@ def start(update, context):
 
         else:
             update.effective_message.reply_photo(
-                "https://telegra.ph/file/2b47585bcf73d39dc75b2.jpg",
+                "https://t.me",
                 PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
