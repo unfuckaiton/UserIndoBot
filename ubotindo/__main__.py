@@ -89,22 +89,6 @@ Partner found [Anonymous](https://t.me/XNewbie)
 /stop — stop this dialog
 
 Send me text, links, gifs, stickers, photos, videos or voice messages and I will anonymously forward them to your partner
-"""
-
-buttons = [
-    [
-        InlineKeyboardButton(
-            text="Add me to your group",
-            url="t.me/ufckbot?startgroup=true"),
-    ]]
-
-
-buttons += [[InlineKeyboardButton(text="Help & Commands ❔",
-                                  url=f"t.me/{dispatcher.bot.username}?start=help"),
-             InlineKeyboardButton(text="Support Channel 🎗️",
-                                  url="https://t.me/The_Channels"),
-             ]]
-
 
 HELP_STRINGS = f"""
 Halo! Nama saya adalah *{dispatcher.bot.first_name}*.
